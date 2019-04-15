@@ -12,13 +12,17 @@ namespace CSharp_Grundlagen
         {
             Console.WriteLine("Hello World!");
 
-            int Nummer = 20;
-            string Wort = "Wort";
-            char Zeichen = 'A'; // Einzeiliger Kommentar
-            float NummerMitKomma = 1.932f; /* Zeile 1
-            Zeile 2
-            Zeile 3 */
+            float eingegebeneZahl;
 
+
+            while (!float.TryParse(Console.ReadLine(), out eingegebeneZahl))
+            {
+                Console.WriteLine("Bitte gib eine gültige Zahl ein");
+            }
+
+            Console.WriteLine($"Die eingegebene Zahl lautet: {eingegebeneZahl}"); // Gib die Zahl als Float aus
+            Console.WriteLine($"Die eingegebene Zahl als Integer lautet: {(int)eingegebeneZahl}"); // Gib die Zahl als Integer aus
+            Console.WriteLine($"Die eingegebene Zahl gerundeten als Integer lautet: {Math.Round(eingegebeneZahl, MidpointRounding.AwayFromZero)}"); // Gib die Zahl als gerundeten Integer aus
             Console.ReadKey();
         }
     }
