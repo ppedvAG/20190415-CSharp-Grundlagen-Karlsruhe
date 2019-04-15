@@ -10,6 +10,16 @@ namespace CSharp_Grundlagen
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+
+            int Nummer = 20;
+            string Wort = "Wort";
+            char Zeichen = 'A'; // Einzeiliger Kommentar
+            float NummerMitKomma = 1.932f; /* Zeile 1
+            Zeile 2
+            Zeile 3 */
+
+            Console.ReadKey();
         }
     }
 }
