@@ -10,6 +10,8 @@ namespace CSharp_Grundlagen
     {
         static void Main(string[] args)
         {
+            // Mit Params kann man sehr viele Parameter übergeben
+            Console.WriteLine(Addiere(3, 5, 7, 8, 4, 2, 4, 7, 65, 3, 2, 4, 3454, 42, 5, 6, 52, 2, 4, 2, 44));
 
             int x = 5;
             // Bei ref muss die Variable vorher initialisiert werden
@@ -20,6 +22,16 @@ namespace CSharp_Grundlagen
             Console.WriteLine(Addiere(5, 3));
 
             Console.ReadKey();
+        }
+
+        public static int Addiere(params int[] zahlen)
+        {
+            int ergebnis = 0;
+            foreach (var item in zahlen)
+            {
+                ergebnis += item;
+            }
+            return ergebnis;
         }
         
         public static int Addiere(int a, int b)
