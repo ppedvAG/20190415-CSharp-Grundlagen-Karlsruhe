@@ -10,34 +10,17 @@ namespace CSharp_Grundlagen
     {
         static void Main(string[] args)
         {
-            Random generator = new Random();
-            int zufallsZahl = generator.Next(1, 6);
+            int[] zahlenListe = new int[] { 2, 5, 6, 1, 4 };
 
-            Console.WriteLine(zufallsZahl);
-
-            int eingabe;
-            int versuche = 0;
-
-            do
+            for (int i = 0; i < zahlenListe.Length; i++)
             {
-                eingabe = int.Parse(Console.ReadLine());
-                versuche++;
-                if (eingabe < zufallsZahl)
-                {
-                    Console.WriteLine("Die eingegebene Zahl ist kleiner");
-                }
-                else if (eingabe > zufallsZahl)
-                {
-                    Console.WriteLine("Die eingegebene Zahl ist größer");
-                }
-                else if (eingabe == zufallsZahl)
-                {
-                    Console.WriteLine($"Die Zahl wurde korrekt erraten, Versuche: {versuche}");
-                }
+                Console.WriteLine(zahlenListe[i]);
+            }
 
-            } while (eingabe != zufallsZahl);
-
-            
+            foreach (var item in zahlenListe)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadKey();
         }
