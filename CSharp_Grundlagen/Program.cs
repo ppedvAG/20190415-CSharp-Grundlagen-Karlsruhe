@@ -14,21 +14,29 @@ namespace CSharp_Grundlagen
             int zufallsZahl = generator.Next(1, 6);
 
             Console.WriteLine(zufallsZahl);
-            int eingabe = int.Parse(Console.ReadLine());
 
-            if (eingabe < zufallsZahl)
+            int eingabe;
+            int versuche = 0;
+
+            do
             {
-                Console.WriteLine("Die eingegebene Zahl ist kleiner");
-                eingabe += 100;
-            }
-            else if (eingabe > zufallsZahl)
-            {
-                Console.WriteLine("Die eingegebene Zahl ist größer");
-            }
-            else if (eingabe == zufallsZahl)
-            {
-                Console.WriteLine("Die Zahlen sind gleich");
-            }
+                eingabe = int.Parse(Console.ReadLine());
+                versuche++;
+                if (eingabe < zufallsZahl)
+                {
+                    Console.WriteLine("Die eingegebene Zahl ist kleiner");
+                }
+                else if (eingabe > zufallsZahl)
+                {
+                    Console.WriteLine("Die eingegebene Zahl ist größer");
+                }
+                else if (eingabe == zufallsZahl)
+                {
+                    Console.WriteLine($"Die Zahl wurde korrekt erraten, Versuche: {versuche}");
+                }
+
+            } while (eingabe != zufallsZahl);
+
             
 
             Console.ReadKey();
