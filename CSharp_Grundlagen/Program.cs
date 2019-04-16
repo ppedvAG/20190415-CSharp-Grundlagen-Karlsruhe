@@ -16,6 +16,8 @@ namespace CSharp_Grundlagen
             Gärtner g = new Gärtner("Jakob", "Meyer");
             Console.WriteLine($"Der Vorname der Person lautet: {g.Vorname}.");
             g.Gießen();
+            Person person2 = g;
+            person2.Laufen();
             Console.ReadKey();
         }
     }
