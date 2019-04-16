@@ -26,5 +26,10 @@ namespace CSharp_Grundlagen
         {
             Console.WriteLine("Ich bin 5 Meter gelaufen.");
         }
+   
+        public override string ToString()
+        {
+            return $"Ich bin ein Gärtner und heiße {Vorname}";
+        }
     }
 }
