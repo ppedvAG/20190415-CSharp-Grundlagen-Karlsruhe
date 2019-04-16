@@ -14,6 +14,7 @@ namespace CSharp_Grundlagen
         }
         public void Gießen()
         {
+            Laufen();
             Console.WriteLine("Die Pflanzen haben jetzt genug Wasser.");
         }
     }

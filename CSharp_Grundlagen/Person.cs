@@ -16,5 +16,10 @@ namespace CSharp_Grundlagen
             Vorname = vorname;
             Name = name;
         }
+
+        public void Laufen()
+        {
+            Console.WriteLine("Ich bin 5 Meter weit gelaufen");
+        }
     }
 }
