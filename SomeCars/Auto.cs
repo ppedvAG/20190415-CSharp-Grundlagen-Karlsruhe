@@ -45,6 +45,10 @@ namespace SomeCars
                 }
             }
         }
-
+        public Auto(int baujahr, string farbe)
+        {
+            Baujahr = baujahr;
+            Farbe = farbe;
+        }
     }
 }
