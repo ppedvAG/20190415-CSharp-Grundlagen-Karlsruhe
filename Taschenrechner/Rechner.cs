@@ -8,7 +8,7 @@ namespace Taschenrechner
 {
     class Rechner
     {
-        public delegate int Rechenoperation(int operand1, int operand2);
+        public delegate int Rechenoperation(params int[] operanden);
         Rechenoperation rechenoperation;
 
         public Rechner(string operation)
@@ -18,8 +18,13 @@ namespace Taschenrechner
                 rechenoperation = new Rechenoperation(Addiere);
             } else if (operation == "Subtrahieren")
             {
-                rechenoperation = new Rechenoperation(Subtrahiere);
-            } else if (operation == "Multiplizieren") {
+                rechenoperation = operanden =>
+                {
+                    int result = operanden.First();
+                    Array.ForEach(operanden.Skip(1).ToArray(), x => result -= x);
+                    return result;
+                };
+            } /*else if (operation == "Multiplizieren") {
                 rechenoperation = new Rechenoperation(
                     delegate (int op1, int op2)
                     {
@@ -32,25 +37,24 @@ namespace Taschenrechner
                 };
             } else if (operation == "Modulo")
             {
-                rechenoperation = (op1, op2) =>
-                {
-                    return op1 % op2;
-                };
-            }
+                rechenoperation = (op1, op2) => op1 % op2;
+            }*/
         }
 
-        public int Rechne(int op1 , int op2)
+        public int Rechne(params int[] operanden)
         {
-            return rechenoperation.Invoke(op1, op2);
+            return rechenoperation.Invoke(operanden);
         }
 
-        public int Addiere(int op1, int op2)
+        public int Addiere(params int[] operanden)
         {
-            return op1+op2;
+            return operanden.Sum();
         }
-        public int Subtrahiere(int op1, int op2)
+        public int Subtrahiere(params int[] operanden)
         {
-            return op1-op2;
+            int result = operanden.First();
+            Array.ForEach(operanden.Skip(1).ToArray(), x => result -= x);
+            return result;
         }
     }
 }

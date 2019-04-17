@@ -10,9 +10,9 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            Rechner rechner = new Rechner("Modulo");
+            Rechner addiereRechner = new Rechner("Subtrahieren");
 
-            Console.WriteLine(rechner.Rechne(10,5));
+            Console.WriteLine(addiereRechner.Rechne(100, 5, 5, 8, 3));
 
             Console.ReadKey();
         }
