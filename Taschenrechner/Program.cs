@@ -10,9 +10,9 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            Rechner rechner = new Rechner("Multiplizieren");
+            Rechner rechner = new Rechner("Dividieren");
 
-            Console.WriteLine(rechner.Rechne(4,7));
+            Console.WriteLine(rechner.Rechne(10,5));
 
             Console.ReadKey();
         }
