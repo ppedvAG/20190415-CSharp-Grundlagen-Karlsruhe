@@ -10,7 +10,7 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            Rechner rechner = new Rechner("Dividieren");
+            Rechner rechner = new Rechner("Modulo");
 
             Console.WriteLine(rechner.Rechne(10,5));
 

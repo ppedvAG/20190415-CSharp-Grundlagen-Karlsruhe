@@ -25,11 +25,16 @@ namespace Taschenrechner
                     {
                         return op1 * op2;
                     });
-            } else if (operation == "Dividieren")
-            {
+            } else if (operation == "Dividieren") {
                 rechenoperation = delegate (int op1, int op2)
                 {
                     return op1 / op2;
+                };
+            } else if (operation == "Modulo")
+            {
+                rechenoperation = (op1, op2) =>
+                {
+                    return op1 % op2;
                 };
             }
         }
