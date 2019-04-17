@@ -19,6 +19,12 @@ namespace Taschenrechner
             } else if (operation == "Subtrahieren")
             {
                 rechenoperation = new Rechenoperation(Subtrahiere);
+            } else if (operation == "Multiplizieren") {
+                rechenoperation = new Rechenoperation(
+                    delegate (int op1, int op2)
+                    {
+                        return op1 * op2;
+                    });
             }
         }
 
