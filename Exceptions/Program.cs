@@ -13,8 +13,16 @@ namespace Exceptions
             Console.WriteLine("Bitte gib eine Zahl ein:");
             string farbe;
             Auto auto = new Auto();
-            auto.Farbe = "Grün";
 
+            try
+            {
+                auto.Farbe = "Grün";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Eine Exception wurde abgefangen!");
+            }
+            Console.WriteLine($"Die Farbe vom Auto ist: {auto.Farbe}!");
 
             try
             {
