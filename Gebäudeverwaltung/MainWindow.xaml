@@ -1,0 +1,37 @@
+﻿<Window x:Class="Gebäudeverwaltung.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gebäudeverwaltung"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="231*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Anzahl der Fenster" HorizontalAlignment="Left" Margin="86,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="Anzahl der Türen" HorizontalAlignment="Left" Margin="94,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.278,0.812" Grid.RowSpan="2"/>
+        <Label Content="Höhe des Gebäudes" HorizontalAlignment="Left" Margin="77,14,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Name des Gebäudes" HorizontalAlignment="Left" Margin="74,45,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Ist das Gebäude neu?" HorizontalAlignment="Left" Margin="71,76,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2"/>
+        <Label Content="Architekturstil" HorizontalAlignment="Left" Margin="111,22.2,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <DockPanel Margin="0,0,-0.4,0">
+            <ToolBar DockPanel.Dock="Top" Height="28" VerticalAlignment="Top">
+                <Button>
+                    Speichern
+                </Button>
+            </ToolBar>
+        </DockPanel>
+        <ComboBox HorizontalAlignment="Left" Margin="217,22.2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Name="G_Architektur"/>
+        <CheckBox HorizontalAlignment="Left" Margin="217,82,0,0" Grid.Row="1" VerticalAlignment="Top" Name="G_IstNeu" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="1" RenderTransformOrigin="0.978,0.2" Name="G_Name"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="1" RenderTransformOrigin="0.978,0.2" x:Name="G_Hoehe"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.978,0.2" x:Name="G_Tueren" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.978,0.2" x:Name="G_Fenster"/>
+        <Button Content="Speichern" HorizontalAlignment="Left" Margin="217,202.2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="SpeichernButton_Click"/>
+        <Button Content="Öffnen" HorizontalAlignment="Left" Margin="515,202.2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>
