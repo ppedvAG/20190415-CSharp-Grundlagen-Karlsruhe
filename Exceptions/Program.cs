@@ -11,20 +11,20 @@ namespace Exceptions
         static void Main(string[] args)
         {
             Console.WriteLine("Bitte gib eine Zahl ein:");
-            int eingegebeneZahl;
+            string farbe;
+            Auto auto = new Auto();
+            auto.Farbe = "Grün";
+
 
             try
             {
-                eingegebeneZahl = int.Parse(Console.ReadLine());
+                farbe = Console.ReadLine();
             } catch(FormatException e)
             {
                 Console.WriteLine("Eine FormatException wurde abgefangen!");
             } catch(Exception e)
             {
                 Console.WriteLine("Eine Exception wurde abgefangen!");
-            } catch(OverflowException e)
-            {
-                Console.WriteLine("Eine OverflowException wurde abgefangen!");
             }
 
             Console.ReadKey();
