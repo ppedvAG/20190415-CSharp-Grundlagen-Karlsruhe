@@ -16,9 +16,15 @@ namespace Exceptions
             try
             {
                 eingegebeneZahl = int.Parse(Console.ReadLine());
+            } catch(FormatException e)
+            {
+                Console.WriteLine("Eine FormatException wurde abgefangen!");
             } catch(Exception e)
             {
                 Console.WriteLine("Eine Exception wurde abgefangen!");
+            } catch(OverflowException e)
+            {
+                Console.WriteLine("Eine OverflowException wurde abgefangen!");
             }
 
             Console.ReadKey();
