@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner
 {
-    class Rechner
+    public class Rechner
     {
         public delegate int Rechenoperation(params int[] operanden);
         Rechenoperation rechenoperation;
