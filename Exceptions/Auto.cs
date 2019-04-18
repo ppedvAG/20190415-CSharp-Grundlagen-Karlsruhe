@@ -19,7 +19,7 @@ namespace Exceptions
             {
                 if (value != "Rot")
                 {
-                    throw new Exception("Es gibt nur rote Autos!");
+                    throw new FarbException("Es gibt nur rote Autos!");
                 }
                 farbe = value;
             }

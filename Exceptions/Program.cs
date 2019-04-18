@@ -18,10 +18,17 @@ namespace Exceptions
             {
                 auto.Farbe = "Grün";
             }
-            catch (Exception e)
+            catch (FarbException e)
             {
-                Console.WriteLine("Eine Exception wurde abgefangen!");
+                Console.WriteLine("Bitte gib eine neue Farbe ein:");
+                auto.Farbe = Console.ReadLine();
+                Console.WriteLine($"Eine FarbException wurde abgefangen! Msg: {e.Message}");
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception");
+            }
+
             Console.WriteLine($"Die Farbe vom Auto ist: {auto.Farbe}!");
 
             try
